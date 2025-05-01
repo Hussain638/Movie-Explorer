@@ -15,102 +15,89 @@ export default function Watchlist() {
         boxSizing: 'border-box',
       }}
     >
-     <Container
-  size="100%"
-  px={0}
-  mt="75px"
-  sx={{
-    width: '100%',
-    maxWidth: '100%',
-    margin: 0,
-    padding: 0,
-  }}
->
-        {/* <Paper
-          shadow="xl"
-          radius="md"
-          p={{ base: 'xs', sm: 'md', md: 'lg' }}
-          withBorder
-          sx={(theme) => ({
-            background: 'rgba(255,255,255,0.97)',
-            backdropFilter: 'blur(10px)',
-            [theme.fn.smallerThan('sm')]: {
-              padding: theme.spacing.xs,
-            },
-          })}
-        > */}
-          <Stack 
-            spacing={{ base: 'md', sm: 'lg', md: 'lg' }}
-            align="stretch"
-            justify="flex-start"
-          >
-            <Group position="center">
-              <Title
-                order={2}
+      <Container
+        size="100%"
+        px={0}
+        mt="75px"
+        sx={{
+          width: '100%',
+          maxWidth: '100%',
+          margin: 0,
+          padding: 0,
+        }}
+      >
+
+        <Stack
+          spacing={{ base: 'md', sm: 'lg', md: 'lg' }}
+          align="stretch"
+          justify="flex-start"
+        >
+          <Group position="center">
+            <Title
+              order={2}
+              sx={(theme) => ({
+                fontSize: '2.4rem',
+                textAlign: 'center',
+                color: theme.colors.blue[8],
+                [theme.fn.smallerThan('sm')]: {
+                  fontSize: '1.8rem',
+                },
+                [theme.fn.smallerThan('xs')]: {
+                  fontSize: '1.5rem',
+                },
+              })}
+            >
+              My Watchlist
+            </Title>
+          </Group>
+
+          {watchlist.length === 0 ? (
+            <Center >
+              <Text
                 sx={(theme) => ({
-                  fontSize: '2.4rem',
-                  textAlign: 'center',
-                  color: theme.colors.blue[8],
+                  fontSize: theme.fontSizes.lg,
                   [theme.fn.smallerThan('sm')]: {
-                    fontSize: '1.8rem',
-                  },
-                  [theme.fn.smallerThan('xs')]: {
-                    fontSize: '1.5rem',
+                    fontSize: theme.fontSizes.md,
                   },
                 })}
+                color="dimmed"
               >
-                My Watchlist
-              </Title>
-            </Group>
-
-            {watchlist.length === 0 ? (
-              <Center >
-                <Text 
+                Watchlist empty. Add some!
+              </Text>
+            </Center>
+          ) : (
+            <SimpleGrid
+              cols={4}
+              spacing={{ base: 10, sm: 15, md: 20, lg: 25 }}
+              breakpoints={[
+                { maxWidth: 1200, cols: 3, spacing: 20 },
+                { maxWidth: 980, cols: 2, spacing: 15 },
+                { maxWidth: 600, cols: 1, spacing: 10 },
+              ]}
+              sx={(theme) => ({
+                margin: '0 auto',
+                width: '100%',
+                [theme.fn.smallerThan('sm')]: {
+                  gap: theme.spacing.xs,
+                },
+              })}
+            >
+              {watchlist.map((movie) => (
+                <Box
+                  key={movie.id}
                   sx={(theme) => ({
-                    fontSize: theme.fontSizes.lg,
+                    width: '100%',
                     [theme.fn.smallerThan('sm')]: {
-                      fontSize: theme.fontSizes.md,
+                      maxWidth: '100%',
                     },
                   })}
-                  color="dimmed"
                 >
-                  Watchlist empty. Add some!
-                </Text>
-              </Center>
-            ) : (
-              <SimpleGrid
-                cols={4}
-                spacing={{ base: 10, sm: 15, md: 20, lg: 25 }}
-                breakpoints={[
-                  { maxWidth: 1200, cols: 3, spacing: 20 },
-                  { maxWidth: 980, cols: 2, spacing: 15 },
-                  { maxWidth: 600, cols: 1, spacing: 10 },
-                ]}
-                sx={(theme) => ({
-                  margin: '0 auto',
-                  width: '100%',
-                  [theme.fn.smallerThan('sm')]: {
-                    gap: theme.spacing.xs,
-                  },
-                })}
-              >
-                {watchlist.map((movie) => (
-                  <Box 
-                    key={movie.id}
-                    sx={(theme) => ({
-                      width: '100%',
-                      [theme.fn.smallerThan('sm')]: {
-                        maxWidth: '100%',
-                      },
-                    })}
-                  >
-                    <WatchlistCard movie={movie} />
-                  </Box>
-                ))}
-              </SimpleGrid>
-            )}
-          </Stack>
-        {/* </Paper> */}
+                  <WatchlistCard movie={movie} />
+                </Box>
+              ))}
+            </SimpleGrid>
+          )}
+        </Stack>
       </Container>
     </Box>
   );

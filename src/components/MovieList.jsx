@@ -14,11 +14,19 @@ import {
 } from '@mantine/core';
 import MovieCard from '../components/MovieCard';
 
-export default function MovieList({ movies, page, totalPages, loadMore, loading, query }) {
-  // When the movies are being loaded on the first page, show a grid of animated skeletons.
+export default function MovieList({
+  movies,
+  page,
+  totalPages,
+  loadMore,
+  loading,
+  query,
+  onCardClick,
+}) {
+  // When movies are loading on the first page, display a grid of skeletons.
   if (loading && page === 1) {
     return (
-      <Container size="lg" py="xl">
+      <Container size="lg" py="md" m={0}>
         <SimpleGrid
           cols={4}
           spacing="lg"
@@ -35,25 +43,34 @@ export default function MovieList({ movies, page, totalPages, loadMore, loading,
     );
   }
 
-  // When no movies found and not loading, show a centered message with a cinematic touch.
+  // When no movies are found and not loading, show a centered message.
   if (!loading && movies.length === 0) {
     return (
       <Center py="xl">
         <Text size="lg" color="gray.5" align="center">
-          {query ? 'No results found. Try a different search.' : 'Start by searching for a movie.'}
+          {query
+            ? 'No results found. Try a different search.'
+            : 'Start by searching for a movie.'}
         </Text>
       </Center>
     );
   }
 
   return (
-    <Container size="xl" py="xl">
-      {/* Info Section with cinematic style */}
+    <Container size="xl" py="md" m={0}>
+      {/* Info Section */}
       <Paper shadow="md" radius="md" p="md" withBorder sx={{ backgroundColor: '#1e293b' }}>
         <Group position="apart" noWrap>
           <Text size="md" weight={500} color="white">
-            Showing page <Badge color="blue" size="md" variant="filled">{page}</Badge> of{' '}
-            <Badge color="blue" size="md" variant="filled">{totalPages}</Badge> for <b>{query}</b>
+            Showing page{' '}
+            <Badge color="orange" size="md" variant="filled">
+              {page}
+            </Badge>{' '}
+            of{' '}
+            <Badge color='orange' size="md" variant="filled">
+              {totalPages}
+            </Badge>{' '}
+            for <b>{query}</b>
           </Text>
           <Text size="sm" color="gray.4">
             Total movies: {movies.length}
@@ -73,13 +90,13 @@ export default function MovieList({ movies, page, totalPages, loadMore, loading,
         ]}
       >
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} onClick={() => {}} />
+          <MovieCard key={movie.id} movie={movie} onCardClick={onCardClick} />
         ))}
       </SimpleGrid>
 
       <Space h="md" />
 
-      {/* Load More button with cinematic outline and Mantine loader */}
+      {/* Load More Button */}
       {page < totalPages && (
         <Center>
           <Button

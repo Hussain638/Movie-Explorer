@@ -4,7 +4,7 @@ import NavigationLinks from './NavigationLinks';
 const Header = () => {
   return (
     <Group justify="space-between" align="center" h="100%" px="md">
-      <Title 
+      <Title
         order={3}
         sx={(theme) => ({
           fontSize: theme.fontSizes.xl,
@@ -13,7 +13,7 @@ const Header = () => {
           },
         })}
       >
-         Movie Explorer
+        Movie Explorer
       </Title>
       <NavigationLinks />
     </Group>

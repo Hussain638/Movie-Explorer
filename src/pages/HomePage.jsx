@@ -145,7 +145,8 @@ export default function Home() {
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                style={{ textShadow: '0 0 15px #00f2fe, 0 0 20px #4facfe',
+                style={{
+                  textShadow: '0 0 15px #00f2fe, 0 0 20px #4facfe',
                 }}
               >
                 🎬 Movie Explorer
