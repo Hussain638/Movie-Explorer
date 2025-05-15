@@ -34,7 +34,7 @@ export default function MovieCard({ movie, onCardClick }) {
       withBorder
       mih="100%"
       sx={(theme) => ({
-        backgroundColor: theme.colorScheme === 'dark' ? '#1c1c1e' : '#f0f0f0',
+        backgroundColor: theme.colorScheme === 'dark' ? '#1c1c1e' : '#1c1c1e',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
         cursor: 'pointer',
         '&:hover': {

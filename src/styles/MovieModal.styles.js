@@ -2,7 +2,7 @@ import { createStyles } from '@mantine/styles';
 
 const useStyles = createStyles((theme) => ({
   modalContent: {
-    backgroundColor: "#8EB0C5",
+    backgroundColor: "#1c1c1e",
     padding: theme.spacing.lg,
     borderRadius: theme.radius.md,
   },
