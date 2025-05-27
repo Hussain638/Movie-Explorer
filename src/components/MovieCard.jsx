@@ -33,15 +33,15 @@ export default function MovieCard({ movie, onCardClick }) {
       h="450px"
       withBorder
       mih="100%"
-      sx={(theme) => ({
-        backgroundColor: theme.colorScheme === 'dark' ? '#1c1c1e' : '#1c1c1e',
+      style={{
+        backgroundColor: '#1c1c1e',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
         cursor: 'pointer',
         '&:hover': {
           transform: 'scale(1.02)',
-          boxShadow: theme.shadows.xl,
+          // boxShadow: theme.shadows.xl,
         },
-      })}
+      }}
     >
       <Card.Section style={{cursor:'pointer'}}>
         <AspectRatio ratio={4/ 4}>

@@ -59,7 +59,7 @@ export default function MovieList({
   return (
     <Container size="xl" py="md" m={0}>
       {/* Info Section */}
-      <Paper shadow="md" radius="md" p="md" withBorder sx={{ backgroundColor: '#1e293b' }}>
+      <Paper shadow="md" radius="md" p="md" withBorder style={{ backgroundColor: '#1e293b' }}>
         <Group position="apart" noWrap>
           <Text size="md" weight={500} color="white">
             Showing page{' '}

@@ -107,7 +107,7 @@ export default function MovieModal({ movie, opened, onClose }) {
         },
       }}
     >
-      <Paper className={classes.modalContent}>
+      <Paper className={classes.modalContent} style={{backgroundColor:'#242424'}}>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
