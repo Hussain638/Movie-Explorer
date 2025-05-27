@@ -100,14 +100,14 @@ export default function MovieModal({ movie, opened, onClose }) {
       // overlayOpacity={0.75}
       // overlayBlur={10}
       // overlayProps={{ opacity: 0.55, blur: 30 }}
-      styles={{
+      style={{backgroundColor:'#fff',
         modal: {
           padding: 0,
           border: 'none',
         },
       }}
     >
-      <Paper className={classes.modalContent} style={{backgroundColor:'#242424'}}>
+      <Paper style={{backgroundColor:'#242424'}}>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
