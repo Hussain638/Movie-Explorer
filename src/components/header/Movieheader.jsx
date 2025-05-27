@@ -18,6 +18,7 @@ function MovieHeader({ movie, directors, writers, uaRating, trailerUrl, showTrai
         className={classes.poster}
         fit="cover"
         withPlaceholder
+        style={{borderRadius:3}}
       />
       <div className={classes.details}>
         <Title order={3} className={classes.title}>

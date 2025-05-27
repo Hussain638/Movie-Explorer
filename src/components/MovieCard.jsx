@@ -12,6 +12,7 @@ export default function MovieCard({ movie, onCardClick }) {
       title: 'Added to Watchlist',
       message: movie?.title || '',
       color: 'teal',
+       position: 'top-right',
     });
   };
 

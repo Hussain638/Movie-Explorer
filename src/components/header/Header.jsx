@@ -3,7 +3,7 @@ import NavigationLinks from './NavigationLinks';
 
 const Header = () => {
   return (
-    <Group justify="space-between" align="center" h="100%" px="md">
+    <Group justify="space-between" align="center" h="100%" px="md" style={{backgroundColor:"#1c1c1e"}}>
       <Title
         order={3}
         sx={(theme) => ({
