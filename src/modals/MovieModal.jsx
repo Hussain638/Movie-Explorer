@@ -97,6 +97,7 @@ export default function MovieModal({ movie, opened, onClose }) {
       centered
       withCloseButton
       size="xl" 
+      style={{backgroundColor:'#242424'}}
       // overlayOpacity={0.75}
       // overlayBlur={10}
       // overlayProps={{ opacity: 0.55, blur: 30 }}
