@@ -6,7 +6,7 @@ function RelatedMovies({ movies, loading, error, classes }) {
   return (
     <div className={classes.relatedSection}>
 
-      <Title order={4} className={classes.relatedTitle}>
+      <Title order={4} className={classes.relatedTitle} style={{color:'white'}}>
         Related Movies
       </Title>
       {loading ? (
@@ -36,7 +36,7 @@ function RelatedMovies({ movies, loading, error, classes }) {
                 fit="cover"
                 withPlaceholder
               />
-              <Text size="xs" weight={500} lineClamp={2}>
+              <Text size="xs" weight={500} lineClamp={2} style={{color:'white'}}>
                 {related.title}
               </Text>
             </motion.div>

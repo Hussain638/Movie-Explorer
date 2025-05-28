@@ -94,19 +94,14 @@ export default function MovieModal({ movie, opened, onClose }) {
     <Modal
       opened={opened}
       onClose={onClose}
-      centered
+       title={<span style={{ color: 'white',fontWeight:'bold' }}>{movie.title}</span>}
+       centered
       withCloseButton
       size="xl" 
-      style={{backgroundColor:'#242424'}}
-      // overlayOpacity={0.75}
-      // overlayBlur={10}
-      // overlayProps={{ opacity: 0.55, blur: 30 }}
-      // style={{backgroundColor:'#fff',
-      //   modal: {
-      //     padding: 0,
-      //     border: 'none',
-      //   },
-      // }}
+      styles={{
+    content: {backgroundColor: '#242424',},
+    header: { backgroundColor: '#242424'}
+  }}
     >
       <Paper className={classes.modalContent} style={{backgroundColor:'#242424'}}>
         <motion.div

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Title, Group, Text, Badge, ActionIcon, Center } from '@mantine/core';
+import { Image, Title, Group, Text, Badge, ActionIcon, Center, Tooltip } from '@mantine/core';
 import { IconPlayerPlay, IconVideoOff, IconPlaylist, IconHeart, IconShare } from '@tabler/icons-react';
 
 function MovieHeader({ movie, directors, writers, uaRating, trailerUrl, showTrailer, toggleTrailer, classes }) {
@@ -51,17 +51,26 @@ function MovieHeader({ movie, directors, writers, uaRating, trailerUrl, showTrai
           {movie.overview || 'No overview available.'}
         </Text>
         <Group mt="md" spacing="xl">
+           
           <ActionIcon variant="transparent" color='gray' size="lg">
+            <Tooltip label="Add Playlist" withArrow>
             <IconPlaylist size={24} />
+            </Tooltip>
           </ActionIcon>
           <ActionIcon variant="transparent" color="red" size="lg">
+              <Tooltip label="Like" withArrow>
             <IconHeart size={24} />
+            </Tooltip>
           </ActionIcon>
           <ActionIcon variant="transparent" color="grape" size="lg">
+              <Tooltip label="Share" withArrow>
             <IconShare size={24} />
+            </Tooltip>
           </ActionIcon>
-          <ActionIcon variant="transparent" color='dark' size="lg" onClick={toggleTrailer} >
+          <ActionIcon variant="transparent" color='white' size="lg" onClick={toggleTrailer} >
+              <Tooltip label="Show Trailor" withArrow>
             {showTrailer ? <IconVideoOff size={24} /> : <IconPlayerPlay size={24} />}
+            </Tooltip>
           </ActionIcon>
         </Group>
         

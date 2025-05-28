@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 function CastSection({ cast, loading, error, classes }) {
   return (
     <div className={classes.castSection}>
-      <Title order={4} className={classes.castTitle}>
+      <Title order={4} className={classes.castTitle} style={{color:'white'}}>
         Cast
       </Title>
       {loading ? (
@@ -35,7 +35,7 @@ function CastSection({ cast, loading, error, classes }) {
                 fit="cover"
                 withPlaceholder
               />
-              <Text size="sm" weight={500} lineClamp={1}>
+              <Text size="sm" weight={500} lineClamp={1} color='white'>
                 {member.name}
               </Text>
               <Text size="xs" color="dimmed" lineClamp={1}>
